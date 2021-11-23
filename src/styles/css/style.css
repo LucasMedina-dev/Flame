@@ -11,22 +11,36 @@
   background-color: #4b4b4b;
   display: flex;
   flex-direction: row;
-  justify-content: space-between; }
+  justify-content: space-between;
+  align-items: flex-end;
+  box-shadow: 0 1px 2px black; }
   .header .header_title {
     margin-left: 30px; }
     .header .header_title .header_title-style {
       text-decoration: none;
       font-size: 3rem;
-      color: white; }
+      color: #bababa;
+      text-shadow: 0 0 2px black; }
   .header .header_nav {
-    margin-right: 30px; }
+    margin-right: 30px;
+    display: flex;
+    flex-direction: row; }
+    .header .header_nav .header_nav-button {
+      font-size: 2rem; }
     .header .header_nav ul {
       display: flex; }
       .header .header_nav ul li {
-        margin: 10px;
-        list-style: none; }
+        display: flex;
+        margin-right: 20px; }
         .header .header_nav ul li a {
+          align-self: flex-end;
           color: white;
           text-decoration: none; }
           .header .header_nav ul li a:hover {
             text-shadow: 0 0 2px white; }
+
+.main .main_introduce {
+  font-size: 2rem;
+  display: block;
+  text-align: center;
+  background-color: rgba(230, 230, 230, 0.4); }
