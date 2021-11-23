@@ -4,12 +4,13 @@ import Main from './Main'
 
 
 const App = ()=> {
+    let userName= "Victoria";
     return (
         // Esto equivale a header({id:"header"}), por lo tanto si en Header.js
         // ejecuto un console.log(params), puedo ver las propiedades dadas desde App
         <>
-            <Header className="header "/>
-            <Main userName="Victoria"/>
+            <Header className="header"/>
+            <Main userName={userName}/>
         </>
     )
 }
