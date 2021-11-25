@@ -6,13 +6,13 @@
   font-family: 'Montserrat', sans-serif; }
 
 .header {
-  height: 50px;
   width: 100%;
   background-color: #4b4b4b;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
+  flex-wrap: wrap;
   box-shadow: 0 1px 2px black; }
   .header .header_title {
     margin-left: 30px; }
@@ -23,10 +23,13 @@
       text-shadow: 0 0 2px black; }
   .header .header_nav {
     margin-right: 30px;
+    margin-bottom: 10px;
     display: flex;
     flex-direction: row; }
     .header .header_nav .header_nav-button {
-      font-size: 2rem; }
+      font-size: 1.5rem;
+      color: lightblue;
+      text-shadow: 0 0 1.5px white; }
     .header .header_nav ul {
       display: flex; }
       .header .header_nav ul li {

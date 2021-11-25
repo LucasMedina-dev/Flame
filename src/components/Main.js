@@ -1,9 +1,9 @@
+import ItemListContainer from './ItemListContainer'
+
 const Main = (prop) => {
     return (
         <div className="main">
-            <div className="main_introduce">
-                Bienvenid@ {prop.userName}
-            </div>
+            <ItemListContainer greeting={prop.userName}/>
             
         </div>
     )

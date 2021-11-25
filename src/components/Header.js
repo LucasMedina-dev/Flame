@@ -1,4 +1,5 @@
 /* eslint-disable */
+import CartWidget from './CartWidget'
 import Nav from './Nav'
 
 const Header = (params) => {
@@ -9,8 +10,7 @@ const Header = (params) => {
             </div>
             <div className="header_nav">
                 <Nav/>
-                <label htmlFor="botonUsuario" className="header_nav-button far fa-user-circle"></label>
-                <button id="botonUsuario" style={{display:"none"}}></button>
+                <CartWidget/>
             </div>
         </header>
     )
