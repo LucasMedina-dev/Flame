@@ -47,3 +47,35 @@
   display: block;
   text-align: center;
   background-color: rgba(230, 230, 230, 0.4); }
+
+.purchase {
+  display: inline-flex; }
+  .purchase .amount {
+    display: inline-flex;
+    width: 160px;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #efefef;
+    padding: 10px 5px;
+    border-radius: 10px;
+    box-shadow: 0 0 2px black; }
+    .purchase .amount .amount_number {
+      padding: 0 50px; }
+  .purchase .purchase_buy {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background-color: #2470e3;
+    border-radius: 5px; }
+    .purchase .purchase_buy:hover {
+      text-shadow: 0 0 2px white; }
+    .purchase .purchase_buy:active {
+      background-color: #1d5ec0; }
+  .purchase .purchase_cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10px;
+    border-radius: 5px;
+    color: white;
+    background-color: royalblue; }

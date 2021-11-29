@@ -61,3 +61,43 @@
         background-color:rgba(230,230,230,0.4);
     }
 }
+.purchase{
+    display: inline-flex;
+    .amount{
+        display: inline-flex;
+        width: 160px;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: rgb(239, 239, 239);
+        padding: 10px 5px;
+        border-radius: 10px;
+        box-shadow: 0 0 2px black;
+        .amount_button{
+        }
+        .amount_number{
+            padding: 0 50px;
+        }
+    }
+    .purchase_buy{
+        display: inline-block;
+        padding: 10px 20px;
+        color: white;
+        background-color: rgb(36, 112, 227);
+        border-radius: 5px;
+        &:hover{
+            text-shadow: 0 0 2px white;
+        }
+        &:active{
+            background-color: rgb(29, 94, 192);
+        }
+    }
+    .purchase_cart{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 10px;
+        border-radius: 5px;
+        color: white;
+        background-color: royalblue;
+    }
+}
