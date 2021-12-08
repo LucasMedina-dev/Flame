@@ -49,6 +49,7 @@
   background-color: rgba(230, 230, 230, 0.4); }
 
 .purchase {
+  width: 100%;
   display: inline-flex; }
   .purchase .amount {
     display: inline-flex;
@@ -79,3 +80,10 @@
     border-radius: 5px;
     color: white;
     background-color: royalblue; }
+
+.product_item {
+  width: 400px;
+  height: 200px;
+  background-color: grey;
+  border: solid 2px black;
+  margin: 10px; }

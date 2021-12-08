@@ -1,15 +1,17 @@
-import ItemCount from './ItemCount'
+import ItemList from './ItemList';
+import { useState, useEffect } from 'react'
 
 const ItemListContainer = (prop) => {
-    let stock=5;
-    let minPurchase;
-    stock>0 ? minPurchase=1 : minPurchase=0
+
+  
     return (
         <>
             <div className="main_introduce">
                 Bienvenid@ {prop.greeting}
+                
             </div>
-            <ItemCount minPurchase={minPurchase} maxPurchase={stock}/>
+            <ItemList/>
+
         </>
     )
 }

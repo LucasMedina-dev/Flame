@@ -62,6 +62,7 @@
     }
 }
 .purchase{
+    width: 100%;
     display: inline-flex;
     .amount{
         display: inline-flex;
@@ -72,8 +73,6 @@
         padding: 10px 5px;
         border-radius: 10px;
         box-shadow: 0 0 2px black;
-        .amount_button{
-        }
         .amount_number{
             padding: 0 50px;
         }
@@ -100,4 +99,11 @@
         color: white;
         background-color: royalblue;
     }
+}
+.product_item{
+    width: 400px;
+    height: 200px;
+    background-color: grey;
+    border: solid 2px black;
+    margin:10px;
 }

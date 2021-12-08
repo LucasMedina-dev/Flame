@@ -1,4 +1,4 @@
-import ItemListContainer from './ItemListContainer'
+import ItemListContainer from './ItemListContainer/ItemListContainer'
 
 const Main = (prop) => {
     return (
