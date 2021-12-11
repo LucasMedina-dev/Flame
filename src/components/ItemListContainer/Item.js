@@ -1,8 +1,8 @@
 import ItemCount from "./ItemCount"
-import { useState, useEffect } from 'react'
+
 
 const Item = (props) => {
-    console.log(props)
+
     return (
         <div className="product_item">
             <div className="product_description">
