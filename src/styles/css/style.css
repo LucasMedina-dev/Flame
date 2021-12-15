@@ -42,14 +42,19 @@
           .header .header_nav ul li a:hover {
             text-shadow: 0 0 2px white; }
 
-.main .main_introduce {
-  font-size: 2rem;
-  display: block;
-  text-align: center;
-  background-color: rgba(230, 230, 230, 0.4); }
+.main {
+  margin-top: 10px;
+  display: flex; }
+  .main .main_introduce {
+    font-size: 2rem;
+    display: block;
+    text-align: center;
+    background-color: rgba(230, 230, 230, 0.4); }
 
 .purchase {
+  grid-area: counter;
   width: 100%;
+  max-height: 40px;
   display: inline-flex; }
   .purchase .amount {
     display: inline-flex;
@@ -81,9 +86,42 @@
     color: white;
     background-color: royalblue; }
 
-.product_item {
-  width: 400px;
-  height: 200px;
-  background-color: grey;
-  border: solid 2px black;
-  margin: 10px; }
+.product {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row; }
+  .product .product_item {
+    width: 400px;
+    height: 200px;
+    background-color: gainsboro;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 25px;
+    border: solid 0.2px #c8c8c8;
+    box-shadow: #bebebe 0 0 10px; }
+    .product .product_item .product_description {
+      margin: auto; }
+    .product .product_item .product_image img {
+      width: 200px;
+      height: 200px; }
+
+.search {
+  position: sticky;
+  top: 0;
+  min-width: 25%;
+  height: 100vh;
+  background-color: gainsboro; }
+
+.item {
+  display: grid;
+  grid-template-areas: "image title" "image description" "image counter";
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 133px); }
+  .item .item_image {
+    grid-area: image; }
+  .item .item_title {
+    grid-area: title;
+    font-size: 2rem; }
+  .item .item_description {
+    grid-area: description; }

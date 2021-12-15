@@ -1,11 +1,9 @@
 import ItemList from './ItemList';
 import { useState, useEffect } from 'react'
-
-const ItemListContainer = (prop) => {
+const ItemListContainer = (props) => {
     const [products, setProducts]=useState([])
-
     useEffect(()=>{
-      fetch('https://fakestoreapi.com/products')
+      fetch('https://my-json-server.typicode.com/LucasMedina-dev/dbserver/productos')
       .then((res)=>{
         const data= res.json()
         return data
@@ -14,22 +12,18 @@ const ItemListContainer = (prop) => {
         setProducts(data)
       })
     },[])
-    if (products.length===0){
+    if (!products){
       return(
         <div className="main_introduce">
-          Bienvenid@ {prop.greeting}
           <p>Cargando...</p>
         </div>
       )
     }else{
       return(
-        <>
-          <div className="main_introduce">
-            Bienvenid@ {prop.greeting}
-          </div>
+        <div className="product">
           <ItemList products={products}/>
-        </>
-      )
+        </div>
+       )
     }
 }
 

@@ -1,11 +1,12 @@
 /* eslint-disable */
+import {Link} from 'react-router-dom'
 const Nav = () => {
     return (
         <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Productos</a></li>
-            <li><a href="#">Contacto</a></li>
-            <li><a href="#">Carrito</a></li>
+            <li><Link to="/Inicio">Inicio</Link></li>
+            <li><Link to="/Productos">Productos</Link></li>
+            <li><Link to="/Contacto">Contacto</Link></li>
+            <li><Link to="/Carrito">Carrito</Link></li>
         </ul>
     )
 }

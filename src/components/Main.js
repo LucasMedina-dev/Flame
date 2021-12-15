@@ -1,9 +1,30 @@
+import { Route, Routes} from 'react-router'
 import ItemListContainer from './ItemListContainer/ItemListContainer'
+import SearchContainer from './SearchContainer/SearchContainer'
+import ItemDetailContainer from './ItemDetailContainer/ItemDetailContainer'
+import HomeContainer from './Home/HomeContainer'
 
-const Main = (prop) => {
+const Main = () => {
     return (
         <div className="main">
-            <ItemListContainer greeting={prop.userName}/>
+            <Routes>
+                <Route path="/Inicio" element={
+                    <HomeContainer/>
+                }>
+                </Route>
+                <Route path="/Productos" element={
+                    <>
+                        <SearchContainer/>
+                        <ItemListContainer/>
+                    </>
+                }>
+                </Route>
+                <Route path="/Productos/:id" element={
+                    <ItemDetailContainer/>
+                }>  
+                </Route>
+            </Routes>
+            
         </div>
     )
 }

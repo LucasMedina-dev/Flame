@@ -1,19 +1,23 @@
+import { useParams } from 'react-router-dom'
 import ItemDetail from './ItemDetail'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
-const ItemDetailContainer = (props) => {
-    let category= props.category
-    let description=props.description
-    
-    const [showMore, setShowMore]=useState(false)
-    const compare=()=>{
-        showMore? setShowMore(false) : setShowMore(true)
-    }
+const ItemDetailContainer = () => {
+    const {id}= useParams()
+    const [product, setProducts]=useState([])
+    useEffect(()=>{
+      fetch('https://my-json-server.typicode.com/LucasMedina-dev/dbserver/productos/'+id)
+      .then((res)=>{
+        const data= res.json()
+        return data
+      })
+      .then((data)=>{
+        setProducts(data)
+      })
+    },[])
     return (
         <>
-            <button onClick={compare}>ver mas</button>
-            {showMore && <ItemDetail category={category} description={description}/>}
-            
+            <ItemDetail product={product}/>
         </>
     )
 }

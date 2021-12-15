@@ -1,21 +1,26 @@
-import ItemCount from "./ItemCount"
+//import ItemCount from "./ItemCount"
 
+import {Link} from 'react-router-dom'
 
 const Item = (props) => {
 
     return (
         <div className="product_item">
             <div className="product_description">
-                <p>Id: {props.id}</p>
-                <p>Nombre de producto: {props.name}</p>
+                <p>{props.name}</p>
                 <p>Precio: {props.price}</p>
+                
             </div>
+            
             <div className="product_image">
-
+                <Link to={"/Productos/"+props.id}><img src={props.img} alt={"product"+props.id}></img></Link>  
             </div>
-            <ItemCount maxPurchase={props.stock} id={props.id}/>
+            
+            
         </div>
     )
 }
 
 export default Item
+//<ItemCount maxPurchase={props.stock} id={props.id}/>
+//<ItemDetailContainer description={props.description} category={props.category}/>
