@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
 const ItemCount = (prop) => {
     let minPurchase;
     let maxPurchase=prop.maxPurchase;
@@ -13,9 +13,11 @@ const ItemCount = (prop) => {
     }
     const proceedBuy = ()=>{
         console.log(`Proceder con la compra de ${purchase} productos`)
+        prop.onAdd(purchase)
     }
     const proceedCart= ()=>{
         console.log(`Se agregaron ${purchase} productos al carrito`)
+        prop.onAdd(purchase)
     }
     // Se debe recargar o salir de la pagina para volver a cargar el stock y evitar comprar mas del stock disponible
     return (
@@ -29,8 +31,8 @@ const ItemCount = (prop) => {
             </div>
             <button id="buttonBuy" style={{"display":"none"}} onClick={proceedBuy}></button>
             <button id="buttonCart" style={{"display":"none"}} onClick={proceedCart}></button>
-            <label htmlFor="buttonBuy" className="purchase_buy">Comprar</label>
-            <label htmlFor="buttonCart" className="purchase_cart fas fa-cart-plus"></label>
+            <Link to="/Buy" ><label htmlFor="buttonBuy" className="purchase_buy">Comprar</label></Link>
+            <Link to="/Cart" className="purchase_cart-flex"><label htmlFor="buttonCart" className="purchase_cart fas fa-cart-plus"></label></Link> 
         </div>
     )
 }

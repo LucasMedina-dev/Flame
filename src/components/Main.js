@@ -9,7 +9,7 @@ const Main = () => {
         <div className="main">
             <Routes>
                 <Route path="/Inicio" element={
-                    <HomeContainer/>
+                    <HomeContainer />
                 }>
                 </Route>
                 <Route path="/Productos" element={
@@ -22,6 +22,14 @@ const Main = () => {
                 <Route path="/Productos/:id" element={
                     <ItemDetailContainer/>
                 }>  
+                </Route>
+                <Route path="/Cart" element={
+                    <h1>Carrito</h1>
+                }>
+                </Route>
+                <Route path="/Buy" element={
+                    <h1>Proceder con la compra</h1>
+                }>
                 </Route>
             </Routes>
             

@@ -77,6 +77,8 @@
       text-shadow: 0 0 2px white; }
     .purchase .purchase_buy:active {
       background-color: #1d5ec0; }
+  .purchase .purchase_cart-flex {
+    display: flex; }
   .purchase .purchase_cart {
     display: flex;
     flex-direction: column;

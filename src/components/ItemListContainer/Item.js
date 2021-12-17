@@ -3,7 +3,6 @@
 import {Link} from 'react-router-dom'
 
 const Item = (props) => {
-
     return (
         <div className="product_item">
             <div className="product_description">

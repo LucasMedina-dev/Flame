@@ -94,6 +94,9 @@
             background-color: rgb(29, 94, 192);
         }
     }
+    .purchase_cart-flex{
+        display: flex;
+    }
     .purchase_cart{
         display: flex;
         flex-direction: column;
@@ -103,6 +106,7 @@
         color: white;
         background-color: royalblue;
     }
+    
 }
 .product{
     display: flex;
