@@ -1,8 +1,10 @@
 import { Route, Routes} from 'react-router'
 import ItemListContainer from './ItemListContainer/ItemListContainer'
-import SearchContainer from './SearchContainer/SearchContainer'
 import ItemDetailContainer from './ItemDetailContainer/ItemDetailContainer'
 import HomeContainer from './Home/HomeContainer'
+import CartContainer from './Cart/CartContainer'
+import CartProvider from './Contexts/CartProvider'
+import CategoryDetailContainer from './CategoryDetailContainer/CategoryDetailContainer'
 
 const Main = () => {
     return (
@@ -14,7 +16,6 @@ const Main = () => {
                 </Route>
                 <Route path="/Productos" element={
                     <>
-                        <SearchContainer/>
                         <ItemListContainer/>
                     </>
                 }>
@@ -24,11 +25,19 @@ const Main = () => {
                 }>  
                 </Route>
                 <Route path="/Cart" element={
-                    <h1>Carrito</h1>
+                    <CartProvider>
+                        <CartContainer/>
+                    </CartProvider>
                 }>
                 </Route>
-                <Route path="/Buy" element={
-                    <h1>Proceder con la compra</h1>
+                <Route path="/Buy/:id" element={
+                    <CartProvider>
+                        <CartContainer/>
+                    </CartProvider>
+                }>
+                </Route>
+                <Route path="Category/:categoryId" element={
+                    <CategoryDetailContainer/>
                 }>
                 </Route>
             </Routes>

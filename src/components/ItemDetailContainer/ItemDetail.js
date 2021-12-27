@@ -6,15 +6,12 @@ const ItemDetail = (props) => {
     const onAdd = (e)=>{
         setPurchased(e)
     }
-    console.log("se agregaron: "+ purchased)
     return (
         <div className="item">
             <div className="item_image"><img src={product.img} alt={"product"+product.id}></img></div>
             <div className="item_title">{product.name}</div>
             <div className="item_description">{product.description}</div>
-            <ItemCount maxPurchase={10-purchased} onAdd={onAdd}/>
-            <div className="item_"></div>
-            <div className="item_"></div>
+            <ItemCount maxPurchase={10-purchased} onAdd={onAdd} id={product.id}/>
             
         </div>
     )

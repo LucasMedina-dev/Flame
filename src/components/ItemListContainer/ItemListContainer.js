@@ -1,6 +1,9 @@
 import ItemList from './ItemList';
 import { useState, useEffect } from 'react'
+import SearchContainer from '../SearchContainer/SearchContainer'
+
 const ItemListContainer = (props) => {
+    const categories=(["Mother", "Ram", "Procesador", "Video"])
     const [products, setProducts]=useState([])
     useEffect(()=>{
       fetch('https://my-json-server.typicode.com/LucasMedina-dev/dbserver/productos')
@@ -12,6 +15,7 @@ const ItemListContainer = (props) => {
         setProducts(data)
       })
     },[])
+  
     if (!products){
       return(
         <div className="main_introduce">
@@ -20,9 +24,13 @@ const ItemListContainer = (props) => {
       )
     }else{
       return(
-        <div className="product">
-          <ItemList products={products}/>
-        </div>
+        <>
+          <SearchContainer categories={categories}/>
+          <div className="product">
+            <ItemList products={products}/>
+          </div>
+        </>
+        
        )
     }
 }
