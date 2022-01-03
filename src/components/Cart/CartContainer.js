@@ -1,11 +1,19 @@
 import {useContext} from 'react'
 import {context} from '../Contexts/CartProvider'
+import ItemList from '../ItemListContainer/ItemList'
 
 const CartContainer = (props) => {
-    const resultado = useContext(context)
-    console.log(resultado)
+    const {dataCart} = useContext(context)
+    console.log(dataCart)
+    
     return (
-        <p>carrito{resultado.id}</p>
+        <div className='product'>
+            {dataCart.map((e)=>{
+                return(
+                    <ItemList key={e.id} products={dataCart}/>
+                )
+            })}
+        </div>
     )
 }
 

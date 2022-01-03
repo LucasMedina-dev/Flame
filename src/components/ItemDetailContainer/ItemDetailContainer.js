@@ -14,6 +14,7 @@ const ItemDetailContainer = () => {
       .then((data)=>{
         setProducts(data)
       })
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
     return (
         <>

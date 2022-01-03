@@ -5,6 +5,10 @@ import SearchContainer from '../SearchContainer/SearchContainer'
 const ItemListContainer = (props) => {
     const categories=(["Mother", "Ram", "Procesador", "Video"])
     const [products, setProducts]=useState([])
+    const search=(e)=>{
+      setFilter(e.target.id.toLowerCase())
+    }
+    const [filter, setFilter]=useState("")
     useEffect(()=>{
       fetch('https://my-json-server.typicode.com/LucasMedina-dev/dbserver/productos')
       .then((res)=>{
@@ -12,10 +16,15 @@ const ItemListContainer = (props) => {
         return data
       })
       .then((data)=>{
-        setProducts(data)
+        if(!filter){
+          setProducts(data)
+        }else{
+          setProducts(data.filter(product=> product.category===filter))
+        }
+        
       })
-    },[])
-  
+    },[filter])
+    
     if (!products){
       return(
         <div className="main_introduce">
@@ -25,7 +34,7 @@ const ItemListContainer = (props) => {
     }else{
       return(
         <>
-          <SearchContainer categories={categories}/>
+          <SearchContainer categories={categories} search={search}/>
           <div className="product">
             <ItemList products={products}/>
           </div>
