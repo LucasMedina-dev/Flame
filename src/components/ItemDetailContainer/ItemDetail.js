@@ -1,22 +1,22 @@
 import { useState, useContext, useEffect } from 'react'
 import ItemCount from '../ItemListContainer/ItemCount'
 import { context } from '../Contexts/CartProvider'
-import { useParams } from 'react-router-dom'
 
 const ItemDetail = (props) => {
-    const {id}= useParams()
     const product= props.product
-    const {refreshCart, dataCart}=useContext(context)
+    const {refreshCart}=useContext(context)
     const onAdd = (quantity, action)=>{
         refreshCart(product, quantity, action)
     }
-    console.log(product)
-    let quantity
-    if (!product.quantity){
-        quantity=0
-    }else{
-        quantity=product.quantity
-    }
+    const [quantity, setQuantity]= useState()
+    useEffect(()=>{
+        if (!product.quantity){
+            setQuantity(0)
+        }else{
+            setQuantity(product.quantity)
+        }
+    },[])
+    
     return (
         <div className="item">
             <div className="item_image"><img src={product.img} alt={"product"+product.id}></img></div>

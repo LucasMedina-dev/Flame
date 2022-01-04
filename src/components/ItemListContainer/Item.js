@@ -9,7 +9,7 @@ const Item = (props) => {
             <div className="product_description">
                 <p>{props.name}</p>
                 <p>Precio: {props.price}</p>
-                <>Categoria: {props.category}</>
+                <p>Categoria: {props.category}</p>
             </div>
             <div className="product_image">
                 <Link to={"/Productos/"+props.id}><img src={props.img} alt={"product"+props.id}></img></Link>  

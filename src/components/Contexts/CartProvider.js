@@ -16,21 +16,17 @@ const CartProvider = ({children}) => {
         switch (action){
             case "cart":
                 const data= [...dataCart]
-                console.log(product.quantity)
-                if (!product.quantity){
-                    product.quantity=quantity
-                }else{
-                    product.quantity=product.quantity+quantity
+                const copiedProduct= data.find(e=> e.id===product.id)
+                let index= data.findIndex((e)=> e.id===product.id)
+                if(isInCart(product) && copiedProduct.quantity<product.stock){
+                    copiedProduct.quantity= copiedProduct.quantity+quantity
+                    data.splice(index,1,copiedProduct)           
                 }
-                if(isInCart(product)){
-                    console.log("existe, se suma el purchased al quantity")
-                    
-                }else{
-                    console.log("no existe, se agrega")
+                if(!isInCart(product)){
+                    product.quantity=quantity
                     data.push(product)
                 }
                 setDataCart(data)
-                console.log(data)
             break;
             case "buy":
                 product.quantity=quantity
@@ -39,7 +35,7 @@ const CartProvider = ({children}) => {
         }
         
     }
-    
+    console.log(dataCart)
 
     const valueContext={
         dataCart,

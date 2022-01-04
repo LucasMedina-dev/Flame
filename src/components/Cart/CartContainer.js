@@ -8,11 +8,7 @@ const CartContainer = (props) => {
     
     return (
         <div className='product'>
-            {dataCart.map((e)=>{
-                return(
-                    <ItemList key={e.id} products={dataCart}/>
-                )
-            })}
+            <ItemList products={dataCart}/>
         </div>
     )
 }
