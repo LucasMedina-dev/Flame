@@ -1,26 +1,30 @@
 import { useParams } from 'react-router-dom'
 import ItemDetail from './ItemDetail'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
+import { context } from '../Contexts/CartProvider'
 
 const ItemDetailContainer = () => {
     const {id}= useParams()
+    const identifier= parseInt(id)
+    const {refreshCart, isInCart, dataCart, database, readyDatabase}=useContext(context)
+
     const [product, setProducts]=useState([])
-    useEffect(()=>{
-      fetch('https://my-json-server.typicode.com/LucasMedina-dev/dbserver/productos/'+id)
-      .then((res)=>{
-        const data= res.json()
-        return data
-      })
-      .then((data)=>{
-        setProducts(data)
-      })
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[])
-    return (
-        <>
-            <ItemDetail product={product}/>
-        </>
-    )
+    useEffect(() => {
+        setProducts(database.filter(e=>e.id===identifier)[0])
+    }, [database])
+    if(product){
+        return (
+            <>
+                <ItemDetail product={product} id={id} refreshCart={refreshCart}/>
+            </>
+        )
+    }else{
+        return(
+            <h1>Cargando</h1>
+        )
+        
+    }
+    
 }
 
 export default ItemDetailContainer

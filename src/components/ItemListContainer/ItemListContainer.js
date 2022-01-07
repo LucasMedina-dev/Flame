@@ -1,8 +1,10 @@
 import ItemList from './ItemList';
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import SearchContainer from '../SearchContainer/SearchContainer'
+import { context } from '../Contexts/CartProvider';
 
 const ItemListContainer = (props) => {
+    const {database}=useContext(context)
     const categories=(["Mother", "Ram", "Procesador", "Video"])
     const [products, setProducts]=useState([])
     const search=(e)=>{
@@ -10,19 +12,11 @@ const ItemListContainer = (props) => {
     }
     const [filter, setFilter]=useState("")
     useEffect(()=>{
-      fetch('https://my-json-server.typicode.com/LucasMedina-dev/dbserver/productos')
-      .then((res)=>{
-        const data= res.json()
-        return data
-      })
-      .then((data)=>{
         if(!filter){
-          setProducts(data)
+          setProducts(database)
         }else{
-          setProducts(data.filter(product=> product.category===filter))
+          setProducts(database.filter(product=> product.category===filter))
         }
-        
-      })
     },[filter])
     
     if (!products){

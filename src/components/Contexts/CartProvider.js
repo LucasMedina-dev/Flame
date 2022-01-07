@@ -1,8 +1,21 @@
-import {createContext, useState} from 'react'
+import {createContext, useState, useEffect} from 'react'
 
 export const context = createContext()
 const {Provider} = context
 const CartProvider = ({children}) => {
+    const [database, setDatabase]=useState([])
+    let readyDatabase= false
+    useEffect(()=>{
+        fetch('https://my-json-server.typicode.com/LucasMedina-dev/dbserver/productos')
+        .then((res)=>{
+          const data= res.json()
+          return data
+        })
+        .then((data)=>{
+          setDatabase(data)
+        })
+        readyDatabase=true
+    },[])
     const [dataCart, setDataCart]=useState([]) //Aca se va a guardar los productos del carrito
     const [dataBuy, setDataBuy]=useState([]) //Aca se va a guardar el producto de la compra actual
     const isInCart=(product)=>{
@@ -13,6 +26,7 @@ const CartProvider = ({children}) => {
         }
     }
     const refreshCart=(product, quantity, action)=>{
+        console.log(product)
         switch (action){
             case "cart":
                 const data= [...dataCart]
@@ -35,12 +49,12 @@ const CartProvider = ({children}) => {
         }
         
     }
-    console.log(dataCart)
-
     const valueContext={
+        database,
         dataCart,
         dataBuy,
-        refreshCart
+        refreshCart,
+        isInCart
     }
 
 
