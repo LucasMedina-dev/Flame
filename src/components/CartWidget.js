@@ -1,9 +1,12 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 
 const CartWidget = (props) => {
     const [cart, setCartAmount]=useState()
-    props.cartAmount && setCartAmount(props.cartAmount)
+    useEffect(() => {
+        props.cartAmount && setCartAmount(props.cartAmount)
+    }, [])
+    
     return (
         <>
             
