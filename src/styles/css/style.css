@@ -91,7 +91,8 @@
 .product {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row; }
+  flex-direction: row;
+  justify-content: space-between; }
   .product .product_item {
     width: 400px;
     height: 200px;
@@ -127,3 +128,15 @@
     font-size: 2rem; }
   .item .item_description {
     grid-area: description; }
+
+.items {
+  margin: auto; }
+
+.options {
+  display: inline-flex;
+  width: 100%;
+  background: #60c5fe;
+  background: linear-gradient(180deg, rgba(96, 197, 254, 0.608263) 0%, rgba(8, 122, 241, 0.608263) 50%); }
+  .options .options_clear {
+    margin: 0 auto;
+    color: white; }

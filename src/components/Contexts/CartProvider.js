@@ -46,14 +46,18 @@ const CartProvider = ({children}) => {
         }
         console.log(dataCart)
     }
+    const Clear=()=>{
+        setDataCart([])
+    }
     const valueContext={
         database,
         dataCart,
         dataBuy,
         refreshCart,
-        isInCart
+        isInCart,
+        Clear
     }
-
+    
 
     return (
         <Provider value={valueContext}>

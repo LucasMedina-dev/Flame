@@ -6,31 +6,36 @@ import CartContainer from './Cart/CartContainer'
 import BuyContainer from './Buy/BuyContainer'
 const Main = () => {
     return (
-        <div className="main">
-            <Routes>
-                <Route path="/Inicio" element={
-                    <HomeContainer />
-                }>
-                </Route>
-                <Route path="/Productos" element={
-                    <ItemListContainer/>
-                }>
-                </Route>
-                <Route path="/Productos/:id" element={
-                    <ItemDetailContainer/>
-                }>  
-                </Route>
-                <Route path="/Cart" element={
-                    <CartContainer/>
-                }>
-                </Route>
-                <Route path="/Buy/:id" element={
-                    <BuyContainer/>
-                }>
-                </Route>
-            </Routes>
-            
-        </div>
+        <>
+            <div className="main">
+                <Routes>
+                    <Route path="/Inicio" element={
+                        <HomeContainer />
+                    }>
+                    </Route>
+                    <Route path="/Productos" element={
+                        <ItemListContainer/>
+                    }>
+                    </Route>
+                    <Route path="/Productos/:id" element={
+                        <ItemDetailContainer/>
+                    }>  
+                    </Route>
+                </Routes>
+            </div>
+            <div className='items'>
+                <Routes>
+                    <Route path="/Cart" element={
+                        <CartContainer/>
+                    }>
+                    </Route>
+                    <Route path="/Buy/:id" element={
+                        <BuyContainer/>
+                    }>
+                    </Route>
+                </Routes>
+            </div>
+        </>
     )
 }
 
