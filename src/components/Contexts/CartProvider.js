@@ -23,9 +23,11 @@ const CartProvider = ({children}) => {
             return false
         }
     }
-    const refreshCart=(product, quantity, action)=>{
-        switch (action){
+    const refreshCart=(product, quantity, doAction)=>{
+        // eslint-disable-next-line
+        switch (doAction){
             case "cart":
+                alert(`Se agregaron ${quantity} productos al carrito`)
                 const data= [...dataCart]
                 const copiedProduct= data.find(e=> e.id===product.id)
                 let index= data.findIndex((e)=> e.id===product.id)

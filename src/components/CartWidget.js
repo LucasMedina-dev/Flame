@@ -3,8 +3,10 @@ import { Link } from "react-router-dom"
 
 const CartWidget = (props) => {
     const [cart, setCartAmount]=useState()
+    
     useEffect(() => {
         props.cartAmount && setCartAmount(props.cartAmount)
+        // eslint-disable-next-line
     }, [])
     
     return (

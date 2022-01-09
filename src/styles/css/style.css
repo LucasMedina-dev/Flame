@@ -135,8 +135,12 @@
 .options {
   display: inline-flex;
   width: 100%;
-  background: #60c5fe;
-  background: linear-gradient(180deg, rgba(96, 197, 254, 0.608263) 0%, rgba(8, 122, 241, 0.608263) 50%); }
-  .options .options_clear {
-    margin: 0 auto;
+  background-color: lightgrey;
+  height: 100px; }
+  .options .options_button {
+    margin: auto;
     color: white; }
+  .options .options_button-red {
+    background-color: #ff5e5e;
+    padding: 2px 15px;
+    border-radius: 2px; }

@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import ItemCount from '../ItemListContainer/ItemCount'
 
 const ItemDetail = ({product, refreshCart}) => {

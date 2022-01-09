@@ -2,7 +2,7 @@ import {useContext} from 'react'
 import {context} from '../Contexts/CartProvider'
 import ItemList from '../ItemListContainer/ItemList'
 
-const CartContainer = (props) => {
+const CartContainer = () => {
     const {dataCart, Clear} = useContext(context)
     console.log(dataCart)
     
@@ -12,7 +12,7 @@ const CartContainer = (props) => {
                 <ItemList products={dataCart}/>
             </div>
             <div className="options">
-                <span className="options_clear" onClick={Clear}>Elminar todos los productos</span>
+                <span className="options_button options_button-red" onClick={Clear}>Elminar todos los productos</span>
             </div>
         </>
         

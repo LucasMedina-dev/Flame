@@ -6,11 +6,12 @@ import { context } from '../Contexts/CartProvider'
 const ItemDetailContainer = () => {
     const {id}= useParams()
     const identifier= parseInt(id)
-    const {refreshCart, isInCart, dataCart, database, readyDatabase}=useContext(context)
+    const {refreshCart, database}=useContext(context)
 
     const [product, setProducts]=useState([])
     useEffect(() => {
         setProducts(database.filter(e=>e.id===identifier)[0])
+        // eslint-disable-next-line
     }, [database])
     if(product){
         return (
