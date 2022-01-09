@@ -40,7 +40,7 @@ const ItemCount = ({maxPurchase, onAdd, quantity, id}) => {
                 <button id="buttonBuy" style={{"display":"none"}} ></button>
                 <button id="buttonCart" style={{"display":"none"}} ></button>
                 <Link to={`/Buy/${id}`} onClick={proceedBuy}><label htmlFor="buttonBuy" className="purchase_buy">Comprar</label></Link>
-                <label htmlFor="buttonCart" className="purchase_cart fas fa-cart-plus" onClick={proceedCart}></label>
+                <label htmlFor="buttonCart" className="purchase_cart" onClick={proceedCart}>Agregar al carrito</label>
             </div>            
         </>
         

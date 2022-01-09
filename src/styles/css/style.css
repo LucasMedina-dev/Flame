@@ -53,9 +53,7 @@
 
 .purchase {
   grid-area: counter;
-  width: 100%;
-  max-height: 40px;
-  display: inline-flex; }
+  width: 100%; }
   .purchase .amount {
     display: inline-flex;
     width: 160px;
@@ -80,10 +78,7 @@
   .purchase .purchase_cart-flex {
     display: flex; }
   .purchase .purchase_cart {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 10px;
+    padding: 10px 20px;
     border-radius: 5px;
     color: white;
     background-color: royalblue; }
