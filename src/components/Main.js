@@ -4,6 +4,10 @@ import ItemDetailContainer from './ItemDetailContainer/ItemDetailContainer'
 import HomeContainer from './Home/HomeContainer'
 import CartContainer from './Cart/CartContainer'
 import BuyContainer from './Buy/BuyContainer'
+<<<<<<< HEAD
+import Contact from './Contact'
+=======
+>>>>>>> 6c265789a979c14a4d90158940c6954b5e371613
 const Main = () => {
     return (
         <>
@@ -21,6 +25,13 @@ const Main = () => {
                         <ItemDetailContainer/>
                     }>  
                     </Route>
+<<<<<<< HEAD
+                    <Route path="/Contacto" element={
+                        <Contact/>
+                    }>  
+                    </Route>
+=======
+>>>>>>> 6c265789a979c14a4d90158940c6954b5e371613
                 </Routes>
             </div>
             <div className='items'>

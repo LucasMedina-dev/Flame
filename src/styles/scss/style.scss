@@ -5,6 +5,12 @@
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 }
+<<<<<<< HEAD
+a{
+    all: unset;
+}
+=======
+>>>>>>> 6c265789a979c14a4d90158940c6954b5e371613
 
 .header{
     width: 100%;
@@ -34,6 +40,14 @@
             color: lightblue;
             text-shadow: 0 0 1.5px white;
         }
+<<<<<<< HEAD
+        .header_quantity{
+            padding: 5px;
+            font-weight:600;
+            color: white;
+        }
+=======
+>>>>>>> 6c265789a979c14a4d90158940c6954b5e371613
         ul{
             display: flex;
             li{
@@ -54,7 +68,10 @@
     
 }
 .main{
+<<<<<<< HEAD
+=======
     margin-top: 10px;
+>>>>>>> 6c265789a979c14a4d90158940c6954b5e371613
     display: flex;
     .main_introduce{
         font-size: 2rem;
@@ -138,6 +155,10 @@
     min-width: 25%;
     height: 100vh;
     background-color: rgb(220, 220, 220);
+<<<<<<< HEAD
+    margin: 10px 0;
+=======
+>>>>>>> 6c265789a979c14a4d90158940c6954b5e371613
 }
 .item{
     display: grid;
@@ -163,6 +184,10 @@
 }
 .options{
     display: inline-flex;
+<<<<<<< HEAD
+    flex-direction: column;
+=======
+>>>>>>> 6c265789a979c14a4d90158940c6954b5e371613
     width: 100%;
     background-color: lightgrey;
     height: 100px;
@@ -175,4 +200,69 @@
         padding: 2px 15px;
         border-radius: 2px;
     }
+<<<<<<< HEAD
+    .options_resume{
+        .options_resume-style{
+            font-weight: 700;
+        }
+    }
+}
+.cut{
+    height: 2px;
+    width: 100%;
+    background-color: white;
+}
+.alert{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .alert_return{
+        text-shadow: black 0 0 2px;
+    }
+}
+.cart{
+    width:100%;
+    background-color: darkgray;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(230,227,227,1) 100%);
+    .cart_item{
+        width:70%;
+        background-color: rgb(248, 248, 248);
+        border-radius: 10px;
+        box-shadow: rgb(182, 182, 182) 0 0 10px;
+        border: solid rgb(219, 219, 219) 3px;
+        margin: 5px 0;
+        display: grid;
+        grid-template-areas: "image description counter";
+        .cart_image{
+            height: 75px;
+            grid-area: image;
+        }
+        .cart_description-area{
+            grid-area: description;
+        }
+        .cart_options{
+            display: flex;
+            flex-direction: column;
+            .cart_options-red{
+                background-color: rgba(255, 0, 0, 0.6);
+                color:white;
+                border-radius: 15px;
+                padding: 5px;
+                margin: auto;
+            }
+            .cart_options-green{
+                all: unset;
+                background-color:rgba(0, 255, 106, 0.6);
+                border-radius: 15px;
+                padding: 5px;
+                margin: auto;
+            }
+        }
+    }
+=======
+>>>>>>> 6c265789a979c14a4d90158940c6954b5e371613
 }

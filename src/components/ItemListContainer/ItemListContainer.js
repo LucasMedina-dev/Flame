@@ -7,10 +7,17 @@ const ItemListContainer = () => {
     const {database}=useContext(context)
     const categories=(["Mother", "Ram", "Procesador", "Video"])
     const [products, setProducts]=useState([])
+<<<<<<< HEAD
+    const [filter, setFilter]=useState("")
+    const search=(e)=>{
+      setFilter(e.target.id.toLowerCase())
+    }
+=======
     const search=(e)=>{
       setFilter(e.target.id.toLowerCase())
     }
     const [filter, setFilter]=useState("")
+>>>>>>> 6c265789a979c14a4d90158940c6954b5e371613
     useEffect(()=>{
         if(!filter){
           setProducts(database)
@@ -19,8 +26,12 @@ const ItemListContainer = () => {
         }
         // eslint-disable-next-line
     },[filter])
+<<<<<<< HEAD
+    if (products.lenght>0){
+=======
     
     if (!products){
+>>>>>>> 6c265789a979c14a4d90158940c6954b5e371613
       return(
         <div className="main_introduce">
           <p>Cargando...</p>
@@ -34,9 +45,14 @@ const ItemListContainer = () => {
             <ItemList products={products}/>
           </div>
         </>
+<<<<<<< HEAD
+        )
+    }   
+=======
         
        )
     }
+>>>>>>> 6c265789a979c14a4d90158940c6954b5e371613
 }
 
 export default ItemListContainer
