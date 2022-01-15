@@ -5,12 +5,9 @@
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif; }
 
-<<<<<<< HEAD
 a {
   all: unset; }
 
-=======
->>>>>>> 6c265789a979c14a4d90158940c6954b5e371613
 .header {
   width: 100%;
   background-color: #4b4b4b;
@@ -36,13 +33,10 @@ a {
       font-size: 1.5rem;
       color: lightblue;
       text-shadow: 0 0 1.5px white; }
-<<<<<<< HEAD
     .header .header_nav .header_quantity {
       padding: 5px;
       font-weight: 600;
       color: white; }
-=======
->>>>>>> 6c265789a979c14a4d90158940c6954b5e371613
     .header .header_nav ul {
       display: flex; }
       .header .header_nav ul li {
@@ -56,10 +50,6 @@ a {
             text-shadow: 0 0 2px white; }
 
 .main {
-<<<<<<< HEAD
-=======
-  margin-top: 10px;
->>>>>>> 6c265789a979c14a4d90158940c6954b5e371613
   display: flex; }
   .main .main_introduce {
     font-size: 2rem;
@@ -125,20 +115,12 @@ a {
   top: 0;
   min-width: 25%;
   height: 100vh;
-<<<<<<< HEAD
   background-color: gainsboro;
   margin: 10px 0; }
 
 .item {
   display: grid;
   grid-template-areas: "image title" "image description" "image counter";
-=======
-  background-color: gainsboro; }
-
-.item {
-  display: grid;
-  grid-template-areas: "image title" "image description" "image counter";
->>>>>>> 6c265789a979c14a4d90158940c6954b5e371613
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, 133px); }
   .item .item_image {
@@ -154,10 +136,7 @@ a {
 
 .options {
   display: inline-flex;
-<<<<<<< HEAD
   flex-direction: column;
-=======
->>>>>>> 6c265789a979c14a4d90158940c6954b5e371613
   width: 100%;
   background-color: lightgrey;
   height: 100px; }
@@ -168,7 +147,6 @@ a {
     background-color: #ff5e5e;
     padding: 2px 15px;
     border-radius: 2px; }
-<<<<<<< HEAD
   .options .options_resume .options_resume-style {
     font-weight: 700; }
 
@@ -221,5 +199,3 @@ a {
         border-radius: 15px;
         padding: 5px;
         margin: auto; }
-=======
->>>>>>> 6c265789a979c14a4d90158940c6954b5e371613

@@ -5,12 +5,9 @@
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 }
-<<<<<<< HEAD
 a{
     all: unset;
 }
-=======
->>>>>>> 6c265789a979c14a4d90158940c6954b5e371613
 
 .header{
     width: 100%;
@@ -40,14 +37,11 @@ a{
             color: lightblue;
             text-shadow: 0 0 1.5px white;
         }
-<<<<<<< HEAD
         .header_quantity{
             padding: 5px;
             font-weight:600;
             color: white;
         }
-=======
->>>>>>> 6c265789a979c14a4d90158940c6954b5e371613
         ul{
             display: flex;
             li{
@@ -68,10 +62,6 @@ a{
     
 }
 .main{
-<<<<<<< HEAD
-=======
-    margin-top: 10px;
->>>>>>> 6c265789a979c14a4d90158940c6954b5e371613
     display: flex;
     .main_introduce{
         font-size: 2rem;
@@ -155,10 +145,7 @@ a{
     min-width: 25%;
     height: 100vh;
     background-color: rgb(220, 220, 220);
-<<<<<<< HEAD
     margin: 10px 0;
-=======
->>>>>>> 6c265789a979c14a4d90158940c6954b5e371613
 }
 .item{
     display: grid;
@@ -184,10 +171,7 @@ a{
 }
 .options{
     display: inline-flex;
-<<<<<<< HEAD
     flex-direction: column;
-=======
->>>>>>> 6c265789a979c14a4d90158940c6954b5e371613
     width: 100%;
     background-color: lightgrey;
     height: 100px;
@@ -200,7 +184,6 @@ a{
         padding: 2px 15px;
         border-radius: 2px;
     }
-<<<<<<< HEAD
     .options_resume{
         .options_resume-style{
             font-weight: 700;
@@ -263,6 +246,4 @@ a{
             }
         }
     }
-=======
->>>>>>> 6c265789a979c14a4d90158940c6954b5e371613
 }

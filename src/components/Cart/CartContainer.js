@@ -1,6 +1,5 @@
 import {useContext} from 'react'
 import {context} from '../Contexts/CartProvider'
-<<<<<<< HEAD
 import CartItemList from './CartItemList'
 import { Link } from "react-router-dom";
 
@@ -31,25 +30,6 @@ const CartContainer = () => {
             </div>
         )
     }
-=======
-import ItemList from '../ItemListContainer/ItemList'
-
-const CartContainer = () => {
-    const {dataCart, Clear} = useContext(context)
-    console.log(dataCart)
-    
-    return (
-        <>
-            <div className='product'>
-                <ItemList products={dataCart}/>
-            </div>
-            <div className="options">
-                <span className="options_button options_button-red" onClick={Clear}>Elminar todos los productos</span>
-            </div>
-        </>
-        
-    )
->>>>>>> 6c265789a979c14a4d90158940c6954b5e371613
 }
 
 export default CartContainer
