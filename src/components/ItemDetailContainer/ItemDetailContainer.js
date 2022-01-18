@@ -13,6 +13,7 @@ const ItemDetailContainer = () => {
         setProducts(database.filter(e=>e.id===identifier)[0])
         // eslint-disable-next-line
     }, [database])
+    console.log(database)
     if(product){
         return (
             <>

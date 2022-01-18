@@ -1,18 +1,23 @@
 import {createContext, useState, useEffect} from 'react'
-
+import {collection, getDocs, where } from 'firebase/firestore'
+import { db } from '../../firebase'
 export const context = createContext()
 const {Provider} = context
+
 const CartProvider = ({children}) => {
     const [database, setDatabase]=useState([])
     useEffect(()=>{
-        fetch('https://my-json-server.typicode.com/LucasMedina-dev/dbserver/productos')
-        .then((res)=>{
-          const data= res.json()
-          return data
+        const productos=collection(db, 'Producto')
+        const promesa = getDocs(productos)
+        const data=[]
+        promesa
+        .then((resultado)=>{
+            console.log(resultado)
+            resultado.forEach((doc)=>{
+                data.push(doc.data())
+            })
         })
-        .then((data)=>{
-          setDatabase(data)
-        })
+        setDatabase(data)
     },[])
     const [dataCart, setDataCart]=useState([]) //Aca se va a guardar los productos del carrito
     const [dataBuy, setDataBuy]=useState([]) //Aca se va a guardar el producto de la compra actual
