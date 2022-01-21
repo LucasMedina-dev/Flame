@@ -1,5 +1,5 @@
 import {createContext, useState, useEffect} from 'react'
-import {collection, getDocs, where } from 'firebase/firestore'
+import {collection, getDocs} from 'firebase/firestore'
 import { db } from '../../firebase'
 export const context = createContext()
 const {Provider} = context
