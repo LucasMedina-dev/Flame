@@ -1,40 +1,53 @@
+import { useParams } from 'react-router-dom'
 import ItemList from './ItemList';
-import { useState, useEffect, useContext } from 'react'
+import { useEffect, useState } from 'react'
 import SearchContainer from '../SearchContainer/SearchContainer'
-import { context } from '../Contexts/CartProvider';
+import { collection, getDocs, where, query } from 'firebase/firestore'
+import { db } from '../../firebase';
 
 const ItemListContainer = () => {
-    const {database}=useContext(context)
-    const categories=(["Mother", "Ram", "Procesador", "Video"])
+    const {id}= useParams()
+    const categories=["Mother", "Ram", "Procesador", "Placa de video", "Discos", "Refrigeracion", "Gabinete", "Teclado", "Mouse", "Monitor"]
     const [products, setProducts]=useState([])
-    const [filter, setFilter]=useState("")
-    const search=(e)=>{
-      setFilter(e.target.id.toLowerCase())
-    }
     useEffect(()=>{
-        if(!filter){
-          setProducts(database)
-        }else{
-          setProducts(database.filter(product=> product.category===filter))
-        }
-        // eslint-disable-next-line
-    },[filter])
-    if (products.lenght>0){
-      return(
-        <div className="main_introduce">
-          <p>Cargando...</p>
-        </div>
-      )
-    }else{
-      return(
-        <>
-          <SearchContainer categories={categories} search={search}/>
-          <div className="product">
-            <ItemList products={products}/>
-          </div>
-        </>
-        )
-    }   
+      if(id){
+        showResultsFiltered()
+      }else{
+        showResultsUnfiltered()        
+      }
+      // eslint-disable-next-line
+    },[id])
+    const productsCollection=collection(db, 'Productos')
+    const showResultsUnfiltered=()=>{
+        const getProducts = getDocs(productsCollection)
+        const data=[]
+        getProducts
+        .then((result)=>{
+            result.forEach((doc)=>{
+                data.push(doc.data())
+            })
+            data.sort((a,b)=>(a.id - b.id))
+            setProducts(data)
+        })
+    }
+    const showResultsFiltered= async ()=>{
+        const filter= where("category", "==", id.toLowerCase())
+        const customQuery= query(productsCollection, filter)
+        const docQuery= await getDocs(customQuery)
+        const ref= docQuery.docs
+        const data=ref.map(doc=>{
+            return doc.data()
+        })
+        setProducts(data)      
+  }
+  return(
+    <>
+      <SearchContainer categories={categories}/>
+      <div className="product">
+        <ItemList products={products}/>
+      </div>
+    </>
+  )
 }
 
 export default ItemListContainer

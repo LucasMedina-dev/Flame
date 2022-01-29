@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const SearchContainer = ({categories, search}) => {
 
     return (
@@ -6,7 +8,7 @@ const SearchContainer = ({categories, search}) => {
             <ul>
                 {categories.map(e=>{
                     return(
-                        <li className="search_category" id={e} onClick={search}>{e}</li>
+                        <Link to={`/Productos/${e}`}><li className="search_category" id={e}>{e}</li></Link>
                     )
                 })}
             </ul>

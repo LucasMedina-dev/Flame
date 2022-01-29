@@ -3,6 +3,7 @@ import Header from './Header';
 import Main from './Main'
 import { BrowserRouter } from 'react-router-dom';
 import CartProvider from './Contexts/CartProvider';
+import AccountContext from './Contexts/AccountContext';
 const App = ()=> {
     let userName="lucas"
     return (
@@ -10,8 +11,10 @@ const App = ()=> {
         // ejecuto un console.log(params), puedo ver las propiedades dadas desde App
         <BrowserRouter>
             <CartProvider>
-                <Header className="header"/>
-                <Main userName={userName}/> 
+                <AccountContext>
+                    <Header className="header"/>
+                    <Main userName={userName}/> 
+                </AccountContext>
             </CartProvider>
         </BrowserRouter>
     )

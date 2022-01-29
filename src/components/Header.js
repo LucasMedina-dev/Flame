@@ -7,7 +7,10 @@ const Header = (params) => {
     return (
         <header className={params.className}>
             <div className="header_title">
-                <Link to="/Inicio" className="header_title-style">Noose</Link>
+                <Link to="/" className="header_title-style">
+                    <img className="header_image-size" src='https://i.ibb.co/48bRsjf/icon.png'></img>
+                    Flame
+                </Link>
             </div>
             <div className="header_nav">
                 <Nav/>

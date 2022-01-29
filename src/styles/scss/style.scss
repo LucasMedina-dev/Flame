@@ -7,8 +7,13 @@
 }
 a{
     all: unset;
+    &:hover{
+        cursor:pointer;
+    }
 }
-
+body{
+    background-color: rgb(227,227,242);
+}
 .header{
     width: 100%;
     background-color: rgb(75, 75, 75);
@@ -23,9 +28,15 @@ a{
         .header_title-style{
             text-decoration: none;
             font-size: 3rem;
-            color: rgb(186, 186, 186);
-            text-shadow: 0 0 2px black;
+            font-weight: 500;
+            color: rgb(113, 31, 255);
+            text-shadow: 0 0 10px #001948;
+            .header_image-size{
+                width: 60px;
+                height: 60px;
+            }
         }
+        
     }
     .header_nav{
         margin-right: 30px;
@@ -72,6 +83,7 @@ a{
 }
 .purchase{
     grid-area: counter;
+    margin-top: 40px;
     width: 100%;
     .amount{
         display: inline-flex;
@@ -118,11 +130,10 @@ a{
     .product_item{
         width: 400px;
         height: 200px;
-        background-color: rgb(220, 220, 220);
+        background-color: rgba(215, 200, 200, 0.414);
         margin:10px;
         display:flex;
         flex-direction: row;
-        border-radius: 25px;
         border:solid 0.2px rgb(200, 200, 200);
         box-shadow: rgb(190, 190, 190) 0 0 10px;
         .product_description{
@@ -130,7 +141,7 @@ a{
         }
         .product_image{
             
-            img{
+            .product_image-size{
                 width: 200px;
                 height: 200px;
             }
@@ -146,6 +157,23 @@ a{
     height: 100vh;
     background-color: rgb(220, 220, 220);
     margin: 10px 0;
+    .search_title{
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 600;
+        color: rgba(75, 75, 75, 0.70);
+    }
+    .search_category{
+        list-style: none;
+        text-align: center;
+        text-decoration: none;
+        box-shadow: rgba(255,132,175, .7);
+        transition: background-color .4s ease-in-out;
+        &:hover{
+
+            background-color: rgba(215, 34, 235, 0.4);
+        }
+    }
 }
 .item{
     display: grid;
@@ -154,17 +182,27 @@ a{
     "image description"
     "image counter";
     grid-template-columns: repeat(2, 1fr) ;
-    grid-template-rows: repeat(3, 133px);
+    grid-template-rows: repeat(3, 150px);
     .item_image{
         grid-area: image;
+        img{
+            width: 700px;
+        }
     }
     .item_title{
         grid-area: title;
         font-size: 2rem;
     }
+    .item_price{
+        grid-area:description;
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
     .item_description{
+        margin-top: 50px;
         grid-area: description;
     }
+    
 }
 .items{
     margin: auto;
@@ -244,6 +282,60 @@ a{
                 padding: 5px;
                 margin: auto;
             }
+        }
+    }
+}
+.account{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    background-color: rgba(134, 133, 147, 0.52);
+    box-shadow: 0 0 10px blueviolet;
+    height: calc(100vh - 72px);
+    .account_options{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 40px;
+        text-shadow: 0 0 5px black;
+    }
+    .account_option{
+        color: white;
+    }
+    .account_title{
+        font-weight: 500;
+        font-size: 1.4rem;
+        text-shadow: 0 0 10px rgb(50, 31, 172);
+        border-bottom: solid rgba(65, 105, 225, 0.372);
+    }
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    .form_option{
+        font-size: 1.3rem;
+        padding: 10px;
+        margin: 5px;
+        box-shadow: 0 0 2px rgb(50, 31, 172);
+    }
+}
+.login{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .login_form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+        .login_input{
+            font-size: 1.3rem;
+            padding: 10px;
+            margin: 5px;
+            box-shadow: 0 0 2px rgb(50, 31, 172);
         }
     }
 }

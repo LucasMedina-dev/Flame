@@ -5,12 +5,16 @@ import HomeContainer from './Home/HomeContainer'
 import CartContainer from './Cart/CartContainer'
 import BuyContainer from './Buy/BuyContainer'
 import Contact from './Contact'
+import LoginFormContainer from './Form/LoginFormContainer'
+import AccountContainer from './Account/AccountContainer'
+import AccountFormContainer from './Account/AdminAccountOptions/AccountFormContainer'
+import FormContext from './Contexts/FormContext'
 const Main = () => {
     return (
         <>
             <div className="main">
                 <Routes>
-                    <Route path="/Inicio" element={
+                    <Route path="/" element={
                         <HomeContainer />
                     }>
                     </Route>
@@ -26,7 +30,25 @@ const Main = () => {
                         <Contact/>
                     }>  
                     </Route>
+                    <Route path="/Login" element={
+                        <LoginFormContainer/>
+                    }>
+                    </Route>
+                    <Route path="/Cuenta" element={
+                        <AccountContainer/>
+                    }>
+                    </Route>
+                    <Route path="/Cuenta/:option" element={
+                        <>
+                            <FormContext>
+                                <AccountContainer/>
+                                <AccountFormContainer/>
+                            </FormContext>
+                        </>
+                    }>
+                    </Route>
                 </Routes>
+
             </div>
             <div className='items'>
                 <Routes>

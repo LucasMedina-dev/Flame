@@ -7,6 +7,11 @@
 
 a {
   all: unset; }
+  a:hover {
+    cursor: pointer; }
+
+body {
+  background-color: #e3e3f2; }
 
 .header {
   width: 100%;
@@ -22,8 +27,12 @@ a {
     .header .header_title .header_title-style {
       text-decoration: none;
       font-size: 3rem;
-      color: #bababa;
-      text-shadow: 0 0 2px black; }
+      font-weight: 500;
+      color: #711fff;
+      text-shadow: 0 0 10px #001948; }
+      .header .header_title .header_title-style .header_image-size {
+        width: 60px;
+        height: 60px; }
   .header .header_nav {
     margin-right: 30px;
     margin-bottom: 10px;
@@ -59,6 +68,7 @@ a {
 
 .purchase {
   grid-area: counter;
+  margin-top: 40px;
   width: 100%; }
   .purchase .amount {
     display: inline-flex;
@@ -97,16 +107,15 @@ a {
   .product .product_item {
     width: 400px;
     height: 200px;
-    background-color: gainsboro;
+    background-color: rgba(215, 200, 200, 0.414);
     margin: 10px;
     display: flex;
     flex-direction: row;
-    border-radius: 25px;
     border: solid 0.2px #c8c8c8;
     box-shadow: #bebebe 0 0 10px; }
     .product .product_item .product_description {
       margin: auto; }
-    .product .product_item .product_image img {
+    .product .product_item .product_image .product_image-size {
       width: 200px;
       height: 200px; }
 
@@ -117,18 +126,38 @@ a {
   height: 100vh;
   background-color: gainsboro;
   margin: 10px 0; }
+  .search .search_title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: rgba(75, 75, 75, 0.7); }
+  .search .search_category {
+    list-style: none;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: rgba(255, 132, 175, 0.7);
+    transition: background-color .4s ease-in-out; }
+    .search .search_category:hover {
+      background-color: rgba(215, 34, 235, 0.4); }
 
 .item {
   display: grid;
-  grid-template-areas: "image title" "image description" "image counter";
+  grid-template-areas: "image title" "image description" "image counter";
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 133px); }
+  grid-template-rows: repeat(3, 150px); }
   .item .item_image {
     grid-area: image; }
+    .item .item_image img {
+      width: 700px; }
   .item .item_title {
     grid-area: title;
     font-size: 2rem; }
+  .item .item_price {
+    grid-area: description;
+    font-size: 1.5rem;
+    font-weight: 500; }
   .item .item_description {
+    margin-top: 50px;
     grid-area: description; }
 
 .items {
@@ -199,3 +228,51 @@ a {
         border-radius: 15px;
         padding: 5px;
         margin: auto; }
+
+.account {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  background-color: rgba(134, 133, 147, 0.52);
+  box-shadow: 0 0 10px blueviolet;
+  height: calc(100vh - 72px); }
+  .account .account_options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 40px;
+    text-shadow: 0 0 5px black; }
+  .account .account_option {
+    color: white; }
+  .account .account_title {
+    font-weight: 500;
+    font-size: 1.4rem;
+    text-shadow: 0 0 10px #321fac;
+    border-bottom: solid rgba(65, 105, 225, 0.372); }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto; }
+  .form .form_option {
+    font-size: 1.3rem;
+    padding: 10px;
+    margin: 5px;
+    box-shadow: 0 0 2px #321fac; }
+
+.login {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .login .login_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto; }
+    .login .login_form .login_input {
+      font-size: 1.3rem;
+      padding: 10px;
+      margin: 5px;
+      box-shadow: 0 0 2px #321fac; }

@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 const CartContainer = () => {
     const {dataCart, Clear,totalAmount} = useContext(context)
-    console.log(dataCart)
     if(dataCart.length>0){
         return(
             <>
