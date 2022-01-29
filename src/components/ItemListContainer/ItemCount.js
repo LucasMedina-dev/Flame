@@ -1,7 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import { formContext } from "../Contexts/FormContext";
 
 const ItemCount = ({maxPurchase, onAdd, quantity, id}) => {
+    const {alertSucess, alertErr}=useContext(formContext)
     const [purchase, setPurchase]=useState(quantity)
     useEffect(() => {
         if (!quantity){
@@ -9,11 +11,9 @@ const ItemCount = ({maxPurchase, onAdd, quantity, id}) => {
         }else{
             setPurchase(quantity)
         }
-    }, [quantity])
-    
-    
+    }, [quantity])    
     const addPurchase= ()=>{
-        (purchase<maxPurchase ) && setPurchase(purchase + 1)
+        (purchase<maxPurchase ) && setPurchase(purchase + 1)   
     }
     const removePurchase= ()=>{
         (purchase>1) && setPurchase(purchase -1)
@@ -24,9 +24,10 @@ const ItemCount = ({maxPurchase, onAdd, quantity, id}) => {
     const proceedCart= ()=>{
         if (purchase<=maxPurchase){
             onAdd(purchase, "cart")
+            alertSucess(`Usted tiene ${purchase} productos en su carrito`)
         }
         if (purchase===maxPurchase){
-            alert("No hay mas stock para este producto")
+            alertErr("No hay mas stock para este producto")
         }
     }
     return (

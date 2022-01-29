@@ -3,9 +3,10 @@ import { context } from '../Contexts/CartProvider'
 import { useContext } from 'react'
 
 const CartItem = ({item}) => {
-    const {deleteItem}=useContext(context)
+    const {deleteItem, alertSucess}=useContext(context)
     const deleteSelf=()=>{
         deleteItem(item)
+        alertSucess("Producto eliminado")
     }
     return (
         <div className="cart_item">

@@ -268,12 +268,16 @@ body{
         .cart_options{
             display: flex;
             flex-direction: column;
+            
             .cart_options-red{
                 background-color: rgba(255, 0, 0, 0.6);
                 color:white;
                 border-radius: 15px;
                 padding: 5px;
                 margin: auto;
+                &:hover{
+                    cursor: pointer;
+                }
             }
             .cart_options-green{
                 all: unset;
@@ -281,6 +285,9 @@ body{
                 border-radius: 15px;
                 padding: 5px;
                 margin: auto;
+                &:hover{
+                    cursor: pointer;
+                }
             }
         }
     }

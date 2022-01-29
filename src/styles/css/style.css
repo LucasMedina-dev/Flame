@@ -222,12 +222,16 @@ body {
         border-radius: 15px;
         padding: 5px;
         margin: auto; }
+        .cart .cart_item .cart_options .cart_options-red:hover {
+          cursor: pointer; }
       .cart .cart_item .cart_options .cart_options-green {
         all: unset;
         background-color: rgba(0, 255, 106, 0.6);
         border-radius: 15px;
         padding: 5px;
         margin: auto; }
+        .cart .cart_item .cart_options .cart_options-green:hover {
+          cursor: pointer; }
 
 .account {
   display: flex;

@@ -5,7 +5,7 @@ import { db } from '../../firebase';
 import {useNavigate} from 'react-router-dom'
 const LoginFormContainer = () => {
     let navigate= useNavigate()
-    const {statusLogued, status, alertSucess, alertErr, userName}=useContext(userContext)
+    const {statusLogued, status}=useContext(userContext)
     const [formData, setFormData]=useState({})
     const handleChange=(e)=>{
         setFormData({...formData,[e.target.name]:e.target.value})

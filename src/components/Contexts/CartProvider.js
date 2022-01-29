@@ -1,6 +1,8 @@
 import {createContext, useState, useEffect } from 'react'
 import { collection, setDoc, doc, getDocs, updateDoc, deleteDoc } from 'firebase/firestore'
 import { db } from '../../firebase';
+import Swal from 'sweetalert2';
+
 export const context = createContext()
 const {Provider} = context
 
@@ -50,14 +52,11 @@ const CartProvider = ({children}) => {
                 if(isInCart(product)){
                     product.quantity= quantity 
                     updateCart(product)
-                    
                 }
                 if(!isInCart(product)){
                     product.quantity=quantity
                     uploadCart(product)
-                    
                 }
-                alert(`Usted tiene ${quantity} unidades al carrito`)
             break;
             case "buy":
                 product.quantity=quantity
@@ -79,12 +78,21 @@ const CartProvider = ({children}) => {
             deleteDoc(doc(db, "Carrito", `${document.id}`))
         })
         pedido()
+        alertSucess("Carrito vaciado correctamente")
     }
     const deleteItem=(product)=>{
         deleteDoc(doc(db, "Carrito", `${product.id}`))
         pedido()
     }
-  
+    const alertSucess=(mensaje)=>{
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: mensaje,
+            showConfirmButton: false,
+            timer: 1500
+          })
+    }
     
     const valueContext={
         dataCart,
@@ -94,7 +102,8 @@ const CartProvider = ({children}) => {
         refreshCart,
         isInCart,
         Clear,
-        deleteItem
+        deleteItem,
+        alertSucess
     }
     
 
