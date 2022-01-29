@@ -280,3 +280,7 @@ body {
       padding: 10px;
       margin: 5px;
       box-shadow: 0 0 2px #321fac; }
+
+.flame {
+  font-size: 3rem;
+  margin: auto; }

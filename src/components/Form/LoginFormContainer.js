@@ -10,7 +10,6 @@ const LoginFormContainer = () => {
     const handleChange=(e)=>{
         setFormData({...formData,[e.target.name]:e.target.value})
     }
-    console.log(status)
     const consulta=async ()=>{
         const userData=collection(db, "Cuentas")
         const q= query(userData, where("user", "==", formData.user))
