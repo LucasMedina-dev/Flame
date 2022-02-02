@@ -3,7 +3,6 @@ import { useContext } from "react";
 import { db } from "../../../../firebase";
 import { formContext } from "../../../Contexts/FormContext";
 
-
 const ModifyOffer = () => {
     const {handleChange, formData, alertSucess, alertErr }=useContext(formContext)
     const updateOffer=  (e)=>{
@@ -20,7 +19,6 @@ const ModifyOffer = () => {
             }
         })
     }
-    
     return (
         <form className="form">
             <input className="form_option" type="number"  name="id" placeholder="Id numerico" value={formData.id} onChange={handleChange}/>
@@ -29,5 +27,4 @@ const ModifyOffer = () => {
         </form>
     )
 };
-
 export default ModifyOffer;

@@ -5,14 +5,12 @@ const CreateItem = () => {
   const sucess=(e)=>{
     e.preventDefault()
     if (formData.length===7){
-        alertSucess("Producto agregado con exito!")
-        submitItem(e)
+      alertSucess("Producto agregado con exito!")
+      submitItem(e)
     }else{
       alertErr("LLene los campos vacios")
     }
   }
-  
-  
   return (
       <form className="form">
           <input className="form_option" type="number"  name="id" placeholder="Id numerico" value={formData.id} onChange={handleChange}/>

@@ -21,7 +21,6 @@ const CartItem = ({item}) => {
                 <span className='cart_options-green'><Link to={`/Productos/${item.id}`}>Modificar cantidad</Link></span>
                 <span className='cart_options-red' onClick={deleteSelf}>Eliminar producto</span>
             </div>
-            
         </div>
     )
 }

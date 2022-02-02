@@ -3,10 +3,8 @@ import { formContext } from "../../../Contexts/FormContext";
 import {doc, getDoc} from 'firebase/firestore'
 import { db } from "../../../../firebase";
 
-
 const ModifyItem = () => {
   const {formData, handleChange, submitItem, setRequestedItem, idSearched, queryIdSearched, alertErr, alertSucess}=useContext(formContext)
-  
   const handleIdChange=(e)=>{
     queryIdSearched(e.target.value)
   }
@@ -20,7 +18,6 @@ const ModifyItem = () => {
       }else{
         alertErr("No existe la id requerida")
       }
-      
     })
   }
   const queryId=(e)=>{
@@ -35,7 +32,6 @@ const ModifyItem = () => {
     e.preventDefault()
     submitItem(e)
     alertSucess("Producto modificado con exito")
-    
   }
   if(parseInt(idSearched)===parseInt(formData.id)){
     return (
@@ -59,7 +55,6 @@ const ModifyItem = () => {
       </form>
     )
   }
-  
 };
 
 export default ModifyItem;
