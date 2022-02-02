@@ -12,7 +12,7 @@ a{
     }
 }
 body{
-    background-color: rgb(227,227,242);
+    background-color: #222;
 }
 .header{
     width: 100%;
@@ -47,6 +47,9 @@ body{
             font-size: 1.5rem;
             color: lightblue;
             text-shadow: 0 0 1.5px white;
+            &:hover{
+                cursor: pointer;
+            }
         }
         .header_quantity{
             padding: 5px;
@@ -135,7 +138,7 @@ body{
         display:flex;
         flex-direction: row;
         border:solid 0.2px rgb(200, 200, 200);
-        box-shadow: rgb(190, 190, 190) 0 0 10px;
+        box-shadow: #711fff 0 0 7px;
         .product_description{
             margin: auto;
         }
@@ -155,22 +158,23 @@ body{
     top: 0;
     min-width: 25%;
     height: 100vh;
-    background-color: rgb(220, 220, 220);
+    background-color: #4b4b4b;
     margin: 10px 0;
     .search_title{
         text-align: center;
         font-size: 2rem;
         font-weight: 600;
-        color: rgba(75, 75, 75, 0.70);
+        color: rgba(28, 28, 28, 0.7);
     }
     .search_category{
         list-style: none;
         text-align: center;
         text-decoration: none;
         box-shadow: rgba(255,132,175, .7);
-        transition: background-color .4s ease-in-out;
+        transition: all .4s ease-in-out;
+        
         &:hover{
-
+            text-shadow: 0 0 10px white;
             background-color: rgba(215, 34, 235, 0.4);
         }
     }
