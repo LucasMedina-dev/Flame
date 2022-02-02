@@ -3,7 +3,6 @@ import {useState, useEffect} from 'react'
 
 
 const QuantityCounter = ({quantity, stock, refreshQuantity, id}) => {
-    console.log("se ejecuta quantitycounter")
     const [purchase, setPurchase]=useState()
     useEffect(() => {
         setPurchase(quantity)

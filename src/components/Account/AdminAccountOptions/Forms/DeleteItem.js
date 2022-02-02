@@ -4,16 +4,19 @@ import { db } from "../../../../firebase";
 import { formContext } from "../../../Contexts/FormContext";
 
 const DeleteItem = () => {
-    const {alertSucess}=useContext(formContext)
+    const {alertSucess, alertErr}=useContext(formContext)
     const [deleteId, setDeleteId]=useState()
     const handleChange=(e)=>{
         setDeleteId(e.target.value)
     }
     const deleteItem=(e)=>{
         e.preventDefault()
-        console.log(deleteId)
-        deleteDoc(doc(db, "Productos", `${deleteId}`))
-        alertSucess("Producto eliminado correctamente")
+        if(deleteId){
+          deleteDoc(doc(db, "Productos", `${deleteId}`))
+          alertSucess("Producto eliminado correctamente")  
+        }else{
+            alertErr("Ingrese id")
+        }
     }
     return(
         <form className="form">

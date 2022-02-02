@@ -37,8 +37,6 @@ const ModifyItem = () => {
     alertSucess("Producto modificado con exito")
     
   }
-  console.log(idSearched)
-  console.log(formData.id)
   if(parseInt(idSearched)===parseInt(formData.id)){
     return (
       <form className="form">
