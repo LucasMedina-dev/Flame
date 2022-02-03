@@ -4,7 +4,8 @@ const CreateItem = () => {
   const {formData, handleChange, submitItem, alertSucess, alertErr}=useContext(formContext)
   const sucess=(e)=>{
     e.preventDefault()
-    if (formData.length===7){
+    console.log(formData)
+    if (formData.id && formData.name &&formData.name && formData.price){
       alertSucess("Producto agregado con exito!")
       submitItem(e)
     }else{
