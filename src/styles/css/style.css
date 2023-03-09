@@ -118,18 +118,15 @@ body {
     justify-content: center;
     flex-direction: row;
     border: solid 0.2px #c8c8c8;
-<<<<<<< HEAD
     box-shadow: #bebebe 0 0 10px;
-    overflow: hidden; }
+    overflow: hidden;
+    box-shadow: #711fff 0 0 7px; }
 
 @keyframes slidein {
   from {
     opacity: 0; }
   to {
     opacity: 100%; } }
-=======
-    box-shadow: #711fff 0 0 7px; }
->>>>>>> f31927b6e2246c1e0770ba1b28d979dbb2b44935
     .product .product_item .product_description {
       width: 40%;
       margin: auto; }
