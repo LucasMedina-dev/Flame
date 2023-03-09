@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 //import ItemCount from "./ItemCount"
 import {Link} from 'react-router-dom'
 
 
 
+=======
+import {Link} from 'react-router-dom'
+
+>>>>>>> f31927b6e2246c1e0770ba1b28d979dbb2b44935
 const Item = (props) => {
     let img=props.img;
     if(!props.img){
@@ -16,7 +21,11 @@ const Item = (props) => {
                 <p>Categoria: {props.category}</p>
             </div>
             <div className="product_image">
+<<<<<<< HEAD
                 <Link className='product_image-link' to={`/Productos/${props.id}`}><img src={img} alt={`product${props.id}`}></img></Link>  
+=======
+                <Link to={`/Productos/id/${props.id}`}><img className="product_image-size" src={props.img} alt={`product${props.id}`}></img></Link>  
+>>>>>>> f31927b6e2246c1e0770ba1b28d979dbb2b44935
             </div>
         </div>
 
@@ -24,5 +33,3 @@ const Item = (props) => {
 }
 
 export default Item
-//<ItemCount maxPurchase={props.stock} id={props.id}/>
-//<ItemDetailContainer description={props.description} category={props.category}/>

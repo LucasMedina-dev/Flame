@@ -5,6 +5,7 @@ const {Provider} = userContext
 
 
 const AccountContext = ({children}) => {
+    // El estado status permite habilitar ciertas funciones en la pagina
     const [status, setStatus]=useState(false)
     const [user, setUser]=useState(false)
     const statusLogued=(userName)=>{

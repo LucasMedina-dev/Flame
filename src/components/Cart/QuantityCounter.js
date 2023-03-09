@@ -1,9 +1,5 @@
 import {useState, useEffect} from 'react'
-
-
-
 const QuantityCounter = ({quantity, stock, refreshQuantity, id}) => {
-    console.log("se ejecuta quantitycounter")
     const [purchase, setPurchase]=useState()
     useEffect(() => {
         setPurchase(quantity)
@@ -20,7 +16,6 @@ const QuantityCounter = ({quantity, stock, refreshQuantity, id}) => {
             refreshQuantity(purchase)
         }
     }
-    
     return (
         <div className="amount">
             <button id={"buttonRemove"+id} style={{"display":"none"}} onClick={removePurchase}></button>
@@ -31,5 +26,4 @@ const QuantityCounter = ({quantity, stock, refreshQuantity, id}) => {
         </div>
     )
 }
-
 export default QuantityCounter

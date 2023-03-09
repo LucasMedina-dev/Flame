@@ -1,4 +1,4 @@
-import { Route, Routes} from 'react-router'
+import { Route, Routes } from 'react-router'
 import ItemListContainer from './ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './ItemDetailContainer/ItemDetailContainer'
 import HomeContainer from './Home/HomeContainer'
@@ -9,6 +9,7 @@ import LoginFormContainer from './Form/LoginFormContainer'
 import AccountContainer from './Account/AccountContainer'
 import AccountFormContainer from './Account/AdminAccountOptions/AccountFormContainer'
 import FormContext from './Contexts/FormContext'
+import ItemListContext from './Contexts/ItemListContext'
 const Main = () => {
     return (
         <>
@@ -16,28 +17,29 @@ const Main = () => {
                 <Routes>
                     <Route path="/" element={
                         <HomeContainer />
-                    }>
-                    </Route>
+                    }/>
                     <Route path="/Productos" element={
-                        <ItemListContainer/>
-                    }>
-                    </Route>
-                    <Route path="/Productos/:id" element={
+                        <ItemListContext>
+                            <ItemListContainer/>
+                        </ItemListContext>
+                    }/>
+                    <Route path="/Productos/categoria/:category" element={
+                        <ItemListContext>
+                            <ItemListContainer/>
+                        </ItemListContext>
+                    }/>
+                    <Route path="/Productos/id/:id" element={
                         <ItemDetailContainer/>
-                    }>  
-                    </Route>
+                    }/>
                     <Route path="/Contacto" element={
                         <Contact/>
-                    }>  
-                    </Route>
+                    }/>
                     <Route path="/Login" element={
                         <LoginFormContainer/>
-                    }>
-                    </Route>
+                    }/>
                     <Route path="/Cuenta" element={
                         <AccountContainer/>
-                    }>
-                    </Route>
+                    }/>
                     <Route path="/Cuenta/:option" element={
                         <>
                             <FormContext>
@@ -45,8 +47,7 @@ const Main = () => {
                                 <AccountFormContainer/>
                             </FormContext>
                         </>
-                    }>
-                    </Route>
+                    }/>
                 </Routes>
 
             </div>

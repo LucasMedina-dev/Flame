@@ -18,10 +18,9 @@ const CartItem = ({item}) => {
                 <p>Total: ${item.quantity*item.price}</p>
             </div>
             <div className="cart_options">
-                <span className='cart_options-green'><Link to={`/Productos/${item.id}`}>Modificar cantidad</Link></span>
+                <span className='cart_options-green'><Link to={`/Productos/id/${item.id}`}>Modificar cantidad</Link></span>
                 <span className='cart_options-red' onClick={deleteSelf}>Eliminar producto</span>
             </div>
-            
         </div>
     )
 }

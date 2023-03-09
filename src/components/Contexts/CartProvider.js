@@ -10,8 +10,10 @@ const CartProvider = ({children}) => {
     const [dataCart, setDataCart]=useState([]) 
     const [dataBuy, setDataBuy]=useState([])
     const [quantityInCart, setQuantityInCart]=useState()
-    const productsCollection=collection(db, 'Carrito')
+
+    // Contenedor de productos
     const data=[]
+    const productsCollection=collection(db, 'Carrito')
     const pedido=()=>{
         const getProducts = getDocs(productsCollection)
         getProducts
@@ -23,28 +25,38 @@ const CartProvider = ({children}) => {
             setDataCart(data)
             setQuantityInCart(data.length)
         })
-    }
+    }//-------------------------------------
+
+    // Pedido inicial al requerir productos
     useEffect(()=>{
         pedido()
         // eslint-disable-next-line
     },[])
+    //-------------------------------------
+
+    //Consulta si existe el producto en el carrito
     const isInCart=(product)=>{
         if(dataCart.find(e=>e.id===product.id)){
             return true
         }else{
             return false
         }
-    }
+    }//-------------------------------------
+
+    // Si el producto NO EXISTE en el carrito se ejecuta uploadCart
     async function uploadCart(document){
         // eslint-disable-next-line
         const docRef= setDoc(doc(db, "Carrito", `${document.id}`), document)
         pedido()
     }
+    // Si el producto EXISTE en el carrito se ejecuta uploadCart
     async function updateCart(document){
         const docRef = doc(db, "Carrito", `${document.id}`);
         const newQuantity={quantity: document.quantity}
         updateDoc(docRef, newQuantity);
     }
+
+    // Funciones al agregar al carrito o hacer compra de un producto
     const refreshCart=(product, quantity, doAction)=>{
         // eslint-disable-next-line
         switch (doAction){
@@ -63,14 +75,18 @@ const CartProvider = ({children}) => {
                 setDataBuy(product)
             break;
         }
-    }
-    
+    }//---------------------------------------
+
+
+    // Suma de precios de productos del carrito
     let totalAmount
     if (dataCart.length>0){
         totalAmount=dataCart.map(e=>e.price*e.quantity).reduce((a,b)=>{
             return a+b
         })
-    }
+    }//---------------------------------------
+
+    // Eliminar todos los productos del carrito
     const Clear=()=>{
         setDataCart([])
         // eslint-disable-next-line
@@ -79,11 +95,14 @@ const CartProvider = ({children}) => {
         })
         pedido()
         alertSucess("Carrito vaciado correctamente")
-    }
+    }//---------------------------------------
+
+    // Eliminar un producto especifico del carrito
     const deleteItem=(product)=>{
         deleteDoc(doc(db, "Carrito", `${product.id}`))
         pedido()
-    }
+    }//---------------------------------------
+
     const alertSucess=(mensaje)=>{
         Swal.fire({
             position: 'top-end',

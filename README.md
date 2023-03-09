@@ -1,9 +1,18 @@
 # Flame- Trabajo final para Coderhouse
 En este archivo se hará una explicacion de las aplicaciones de diferentes herramientas en la web
+<<<<<<< HEAD
 Adjunto este video para comprender mas el funcionamiento del sitio
 https://youtu.be/ViMpQOWNnG0
 ## En este proyecto se aplicó
 
+=======
+Adjunto este video para comprender mas el funcionamiento del sitio.
+https://youtu.be/ViMpQOWNnG0
+
+# Esta web esta alojada en vercel para que pueda probarla usted mismo https://noose.vercel.app/
+
+## En este proyecto se aplicó
+>>>>>>> f31927b6e2246c1e0770ba1b28d979dbb2b44935
 React router
 SweetAlert2
 Firestore
