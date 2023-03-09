@@ -9,7 +9,7 @@ const ItemListContainer = () => {
     <>
       <SearchContainer categories={categories}/>
       <div className="product" ref={divRef}>
-        <ItemList products={products}/>
+      <ItemList products={products}/>
       </div>
 
     </>

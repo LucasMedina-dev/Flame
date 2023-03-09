@@ -28,7 +28,7 @@ const Main = () => {
                             <ItemListContainer/>
                         </ItemListContext>
                     }/>
-                    <Route path="/Productos/id/:id" element={
+                    <Route path="/Productos/:id" element={
                         <ItemDetailContainer/>
                     }/>
                     <Route path="/Contacto" element={

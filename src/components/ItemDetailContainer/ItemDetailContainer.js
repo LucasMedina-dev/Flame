@@ -5,8 +5,9 @@ import { context } from '../Contexts/CartProvider'
 import {doc, getDoc} from 'firebase/firestore'
 import { db } from '../../firebase'
 import ItemListContainer from '../ItemListContainer/ItemListContainer'
+
 const ItemDetailContainer = () => {
-    const {id}= useParams()
+    const {id}= useParams();
     const {refreshCart}=useContext(context)
     const [product, setProducts]=useState([])
     useEffect(()=>{
