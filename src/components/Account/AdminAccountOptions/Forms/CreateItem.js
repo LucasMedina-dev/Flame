@@ -1,16 +1,12 @@
 import { useContext } from "react";
 import { formContext } from "../../../Contexts/FormContext";
 const CreateItem = () => {
-  const {formData, handleChange, submitItem, alertSucess, alertErr}=useContext(formContext)
+  const {handleChange, submitItem, alertSucess, setFormData}=useContext(formContext)
   const sucess=(e)=>{
-    e.preventDefault()
-    console.log(formData)
-    if (formData.id && formData.name &&formData.name && formData.price){
-      alertSucess("Producto agregado con exito!")
-      submitItem(e)
-    }else{
-      alertErr("LLene los campos vacios")
-    }
+    e.preventDefault();
+    alertSucess("Producto agregado con exito!");
+    submitItem(e);
+    setFormData({});
   }
   return (
       <form className="form">

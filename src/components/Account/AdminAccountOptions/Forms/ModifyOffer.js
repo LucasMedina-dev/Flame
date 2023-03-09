@@ -7,7 +7,6 @@ const ModifyOffer = () => {
     const {handleChange, formData, setFormData, alertSucess, alertErr }=useContext(formContext)
     const updateOffer=  (e)=>{
         e.preventDefault()
-<<<<<<< HEAD
         const producto=doc(db, "Productos", `${formData.id}`)
         const promise= getDoc(producto)
         promise
@@ -22,24 +21,6 @@ const ModifyOffer = () => {
             }
             setFormData({})
         })
-=======
-        if(formData.id && formData.inoffer){
-            const producto=doc(db, "Productos", `${formData.id}`)
-            const promise= getDoc(producto)
-            promise
-            .then((element)=>{
-                if(element.data()){
-                    updateDoc(producto, {inoffer: formData.inoffer})
-                    alertSucess("Oferta realizada con exito")
-                }else{
-                    alertErr("No existe producto correspondiente al id")
-                }
-            })
-        }else{
-            alertErr("Llene los campos vacios")
-        }
-        
->>>>>>> f31927b6e2246c1e0770ba1b28d979dbb2b44935
     }
     return (
         <form className="form">

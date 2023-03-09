@@ -26,7 +26,6 @@ const HomeContainer = () => {
         // eslint-disable-next-line
     },[])
     return (
-<<<<<<< HEAD
         <>
             <div className='product'>
                 <ItemList products={products}/>
@@ -34,9 +33,6 @@ const HomeContainer = () => {
             
         </>
         
-=======
-        <span className="flame">Bienvenido a Flame</span>
->>>>>>> f31927b6e2246c1e0770ba1b28d979dbb2b44935
     )
 }
 

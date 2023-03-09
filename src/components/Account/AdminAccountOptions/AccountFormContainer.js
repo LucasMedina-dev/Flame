@@ -7,9 +7,6 @@ import { useContext } from 'react';
 import { userContext } from '../../Contexts/AccountContext';
 const AccountFormContainer = () => {
     const {option}=useParams()
-<<<<<<< HEAD
-    if(option==="CreateItem"){
-=======
     const {status}=useContext(userContext)
     let redirect
     if (!status){
@@ -18,7 +15,6 @@ const AccountFormContainer = () => {
         redirect=option
     }
     if(redirect==="CreateItem"){
->>>>>>> f31927b6e2246c1e0770ba1b28d979dbb2b44935
         return(<CreateItem/>)
     }
     if(option==="ModifyItem"){

@@ -4,11 +4,7 @@ import {doc, getDoc} from 'firebase/firestore'
 import { db } from "../../../../firebase";
 
 const ModifyItem = () => {
-<<<<<<< HEAD
   const {formData, setFormData, handleChange, submitItem, setRequestedItem, idSearched, queryIdSearched, alertErr, alertSucess}=useContext(formContext);
-=======
-  const {formData, handleChange, submitItem, setRequestedItem, idSearched, queryIdSearched, alertErr, alertSucess}=useContext(formContext)
->>>>>>> f31927b6e2246c1e0770ba1b28d979dbb2b44935
   const handleIdChange=(e)=>{
     queryIdSearched(e.target.value)
   }
@@ -40,10 +36,6 @@ const ModifyItem = () => {
     submitItem(e)
     alertSucess("Producto modificado con exito")
   }
-<<<<<<< HEAD
-  
-=======
->>>>>>> f31927b6e2246c1e0770ba1b28d979dbb2b44935
   if(parseInt(idSearched)===parseInt(formData.id)){
     return (
       <form className="form">
