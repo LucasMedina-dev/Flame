@@ -6,7 +6,6 @@ import { useParams } from 'react-router-dom';
 
 const AccountFormContainer = () => {
     const {option}=useParams()
-
     if(option==="CreateItem"){
         return(<CreateItem/>)
     }

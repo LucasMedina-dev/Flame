@@ -5,19 +5,22 @@ import { formContext } from "../../../Contexts/FormContext";
 
 
 const ModifyOffer = () => {
-    const {handleChange, formData, alertSucess, alertErr }=useContext(formContext)
+    const {handleChange, formData, setFormData, alertSucess, alertErr }=useContext(formContext)
     const updateOffer=  (e)=>{
         e.preventDefault()
         const producto=doc(db, "Productos", `${formData.id}`)
         const promise= getDoc(producto)
         promise
         .then((element)=>{
-            if(element.data()){
-                updateDoc(producto, {inoffer: formData.inoffer})
-                alertSucess("Oferta realizada con exito")
-            }else{
-                alertErr("No existe producto correspondiente al id")
+            if(element.data() && formData.inoffer>=0 && formData.inoffer<100){
+                updateDoc(producto, {inoffer: formData.inoffer});
+                alertSucess("Oferta realizada con exito");
+            }else if(!element.data()){
+                alertErr("No existe producto correspondiente al id");
+            }else if(!formData.inoffer){
+                alertErr('No ingreso porcentaje de oferta');
             }
+            setFormData({})
         })
     }
     

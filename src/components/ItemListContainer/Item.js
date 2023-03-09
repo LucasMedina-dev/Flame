@@ -1,9 +1,13 @@
 //import ItemCount from "./ItemCount"
-
 import {Link} from 'react-router-dom'
 
 
+
 const Item = (props) => {
+    let img=props.img;
+    if(!props.img){
+        img="https://upload.wikimedia.org/wikipedia/commons/8/8f/Example_image.svg";
+    }
     return (
         <div className="product_item">
             <div className="product_description">
@@ -12,7 +16,7 @@ const Item = (props) => {
                 <p>Categoria: {props.category}</p>
             </div>
             <div className="product_image">
-                <Link to={`/Productos/${props.id}`}><img className="product_image-size" src={props.img} alt={`product${props.id}`}></img></Link>  
+                <Link className='product_image-link' to={`/Productos/${props.id}`}><img src={img} alt={`product${props.id}`}></img></Link>  
             </div>
         </div>
 

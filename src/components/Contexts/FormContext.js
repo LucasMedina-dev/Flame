@@ -7,6 +7,7 @@ export const formContext = createContext()
 const {Provider} = formContext
 
 const FormContext = ({children}) => {
+    console.log('compilo')
     const [formData, setFormData]=useState({})
     const [idSearched, setIdSearched]=useState(false)
     
@@ -48,6 +49,7 @@ const FormContext = ({children}) => {
     }
     const valueContext={
         formData,
+        setFormData,
         handleChange,
         submitItem,
         addDoc,

@@ -5,12 +5,12 @@ import { db } from "../../../../firebase";
 
 
 const ModifyItem = () => {
-  const {formData, handleChange, submitItem, setRequestedItem, idSearched, queryIdSearched, alertErr, alertSucess}=useContext(formContext)
-  
+  const {formData, setFormData, handleChange, submitItem, setRequestedItem, idSearched, queryIdSearched, alertErr, alertSucess}=useContext(formContext);
   const handleIdChange=(e)=>{
     queryIdSearched(e.target.value)
   }
   const query=(id)=>{
+    console.log(id)
     const producto=doc(db, "Productos", `${id}`)
     const promise= getDoc(producto)
     promise
@@ -20,7 +20,6 @@ const ModifyItem = () => {
       }else{
         alertErr("No existe la id requerida")
       }
-      
     })
   }
   const queryId=(e)=>{
@@ -29,16 +28,16 @@ const ModifyItem = () => {
   }
   const newQuery=(e)=>{
     e.preventDefault()
-    queryIdSearched(false)
+    queryIdSearched('')
+    setFormData({});
+
   }
   const sucess=(e)=>{
     e.preventDefault()
     submitItem(e)
     alertSucess("Producto modificado con exito")
-    
   }
-  console.log(idSearched)
-  console.log(formData.id)
+  
   if(parseInt(idSearched)===parseInt(formData.id)){
     return (
       <form className="form">
@@ -49,7 +48,7 @@ const ModifyItem = () => {
           <input className="form_option" type="text"  name="img" placeholder="Imagen del producto" value={formData.img} onChange={handleChange}/>
           <input className="form_option" type="number"  name="price" placeholder="Ingrese precio" value={formData.price} onChange={handleChange}/>
           <input className="form_option" type="submit" value="Modificar producto" onClick={sucess}/>
-          <input className="form_option" type="submit" value="Nueva consulta" onClick={newQuery}/>
+          <input className="form_option" type="submit" value="Nueva consulta" onClick={newQuery} onChange={handleChange}/>
       </form>
     )
   }else{
