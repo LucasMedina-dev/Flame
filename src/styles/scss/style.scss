@@ -16,60 +16,133 @@ body{
 }
 .header{
     width: 100%;
+    max-height: 70px;
     background-color: rgb(75, 75, 75);
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    align-items: flex-end;
-    flex-wrap: wrap;
+    flex-direction: row;
+    flex-wrap: nowrap;
     box-shadow: 0 1px 2px black;
+    
+    .header_button{
+        display: none;
+        filter: drop-shadow(0 2px 1px rgb(49, 49, 49));
+        
+    }
+    
     .header_title{
-        margin-left: 30px;
+        margin-right: 50px;
         .header_title-style{
             text-decoration: none;
             font-size: 3rem;
             font-weight: 500;
             color: rgb(113, 31, 255);
             text-shadow: 0 0 10px #001948;
-            .header_image-size{
-                width: 60px;
+            display: flex;
+            flex-direction: row;
+            img{
                 height: 60px;
+                object-fit: contain;
+            }
+            h1{
+                display: inline;
+                font-size: 3rem;
             }
         }
-        
     }
+    
     .header_nav{
-        margin-right: 30px;
-        margin-bottom: 10px;
+        height: 100%;
         display: flex;
         flex-direction: row;
-        .header_nav-button{
-            font-size: 1.5rem;
-            color: lightblue;
-            text-shadow: 0 0 1.5px white;
-            &:hover{
-                cursor: pointer;
-            }
-        }
+        flex-wrap: nowrap;
+        align-self: flex-end;
+        margin-left: 50px;
+        margin-bottom: 10px;
         .header_quantity{
             padding: 5px;
             font-weight:600;
             color: white;
         }
-        ul{
+        .header_nav-list{
+            list-style: none;
             display: flex;
+            flex-direction: row;
             li{
-                display: flex;
                 margin-right: 20px;
+                text-decoration: none;
                 a{
+                    font-size: 1.8rem;
                     align-self: flex-end;
-                    color: white;
+                    color: rgba(255, 255, 255, 0.733);
                     text-decoration: none;
+                    cursor: pointer;
                     &:hover{
-                        text-shadow: 0 0 2px white;
+                        color: white;
                     }
                 }
             }
+        }
+        
+    }
+    @media(max-width:1024px) {
+        .header_nav{
+            color: lightgrey;
+            font-size: 1.5rem;
+            margin: 0;
+            align-self: center;
+            flex-direction: column;
+            .header_nav-list{
+                justify-content: center;
+                margin-top: 24px;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                width: 480px;
+                height: 100vh;
+                position: absolute;
+                z-index: 10000;
+            }
+            .header_nav-open{
+                
+                @keyframes slideOn {
+                    from{
+                        opacity: 0;
+                    }to{
+                        opacity: 100;
+                    }
+                }
+                animation: slideOn 1s;
+            }
+            .header_nav-close{
+                display: none;
+                @keyframes slideOff{
+                    from{
+                        display: flex;
+                        opacity: 100;
+                    }
+                    to{
+                        opacity: 0;
+                    }
+                    
+                }
+                animation: slideOff 0.4s ease-in;
+            }
+            .header_button{
+                display: flex;
+                align-self: flex-start;
+                font-size: 1.5rem;
+                color: lightblue;
+                text-shadow: 0 0 1.5px white;
+                padding-left: 20px;
+                &:hover{
+                    cursor: pointer;
+                }
+                &:hover{
+                    color: white;
+                }
+            }
+            
         }
         
     }
