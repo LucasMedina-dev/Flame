@@ -9,11 +9,12 @@ const Header = (params) => {
     const tabSwitch=()=>{
         tab?setTab(false):setTab(true);
     }
+    
     return (
         <header className={params.className}>
             <div className="header_nav">
                 <FontAwesomeIcon className='header_button' icon={faBars} onClick={tabSwitch}/>
-                <Nav tab={tab}/>
+                <Nav tab={tab} onClick={tabSwitch}/>
             </div>
             <div className="header_title">
                 <Link to="/" className="header_title-style">

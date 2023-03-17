@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import {Link} from 'react-router-dom'
 import CartWidget from './CartWidget'
 import { userContext } from './Contexts/AccountContext'
@@ -8,7 +8,6 @@ const Nav = (props) => {
     const switchTab=()=>{
         return props.tab?'header_nav-open':'header_nav-close'
     }
-    console.log(props.tab)
     const userActive=()=>{
         if(status){
             if(user){
@@ -25,9 +24,9 @@ const Nav = (props) => {
 
     return (
         <ul className={'header_nav-list '+switchTab()}>
-            <li><Link to="/">Inicio</Link></li>
-            <li><Link to="/Productos">Productos</Link></li>
-            <li><Link to="/Contacto">Contacto</Link></li>
+            <li><Link  to="/">Inicio</Link></li>
+            <li><Link  to="/Productos">Productos</Link></li>
+            <li><Link  to="/Contacto">Contacto</Link></li>
             {userActive()}
             <CartWidget/>
         </ul>

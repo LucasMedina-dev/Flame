@@ -11,9 +11,27 @@ import AccountFormContainer from './Account/AdminAccountOptions/AccountFormConta
 import FormContext from './Contexts/FormContext'
 import ItemListContext from './Contexts/ItemListContext'
 const Main = () => {
+    /*const [position, setMousePosition] = useState({x:null, y:null, mx:null, posRel:50, gradient:{}});
+    
+    useEffect(()=>{
+        const gradientControl = ev => {
+            let pos=(ev.clientX*100/window.innerWidth);
+            const gradient={
+                background: 'rgb(255,255,255)',
+                background: 'linear-gradient(90deg, rgba(160,250,255,1) -30%, rgba(255,255,255) '+pos+'%, rgba(160,250,255,1) 130%)'
+                
+            }
+            setMousePosition({ x: ev.clientX, y: ev.clientY, mx:ev.innerWidth, posRel:pos, gradient:gradient});
+          };
+          window.addEventListener('mousemove', gradientControl);
+          
+          return () => {
+            window.removeEventListener('mousemove', gradientControl);
+          };
+    },[])*/
     return (
         <>
-            <div className="main">
+            <div /*style={position.gradient}*/ className="main" >
                 <Routes>
                     <Route path="/" element={
                         <HomeContainer />
