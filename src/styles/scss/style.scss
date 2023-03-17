@@ -108,6 +108,7 @@ body{
                 height: 100vh;
                 background-color: white;
                 position: absolute;
+                z-index: 8000;
             }
             .header_nav-open{
                 
@@ -257,6 +258,7 @@ body{
 
 .search{
     position: sticky;
+    z-index: 9000;
     top: 0;
     min-width: 15%;
     height: 100vh;
